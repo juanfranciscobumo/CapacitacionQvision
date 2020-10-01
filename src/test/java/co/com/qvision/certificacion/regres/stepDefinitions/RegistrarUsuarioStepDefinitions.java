@@ -1,6 +1,5 @@
 package co.com.qvision.certificacion.regres.stepDefinitions;
 
-import co.com.qvision.certificacion.regres.builders.IniciarSesionBuilder;
 import co.com.qvision.certificacion.regres.exceptions.CrearUsuarioException;
 import co.com.qvision.certificacion.regres.models.IniciarSesionModel;
 import co.com.qvision.certificacion.regres.questions.LaCreacionDelUsuario;
@@ -18,6 +17,7 @@ import static org.hamcrest.Matchers.equalTo;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 
+
 import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -25,7 +25,7 @@ import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeT
 import static co.com.qvision.certificacion.regres.utils.Constantes.MENSAJE_RESPUESTA;
 
 public class RegistrarUsuarioStepDefinitions {
-
+    private static final String ERROR = "error";
 
     @Cuando("el usuario {string} ingrese su trabajo {string}")
     public void elUsuarioIngreseSuTrabajo(String nombre, String trabajo) {
@@ -48,11 +48,10 @@ public class RegistrarUsuarioStepDefinitions {
 
     @Cuando("el usuario inicie sesión erroneamente")
     public void elUsuarioInicieSesiónErroneamente(List<IniciarSesionModel> datos) {
-        System.out.println(datos);
         theActorInTheSpotlight()
                 .attemptsTo(IniciaSesion
                         .conLosDatos(email(datos.get(0).getEmail())
-                                .yClave(datos.get(0).getContrasena())));
+                                .yClave()));
     }
 
     @Entonces("el usuario vera el mensaje de error {string}")
@@ -61,9 +60,8 @@ public class RegistrarUsuarioStepDefinitions {
                 seeThatResponse(MENSAJE_RESPUESTA,
                         response -> response
                                 .statusCode(valueOf(mensajeError).getCodigo())
-                                .body("error", equalTo(valueOf(mensajeError).getMensaje())))
+                                .body(ERROR, equalTo(valueOf(mensajeError).getMensaje())))
                         .orComplainWith(CrearUsuarioException.class, CODIGO_RESPUESTA));
-
     }
 
 }

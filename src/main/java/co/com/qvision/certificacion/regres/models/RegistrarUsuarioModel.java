@@ -1,8 +1,5 @@
 package co.com.qvision.certificacion.regres.models;
 
-
-import co.com.qvision.certificacion.regres.builders.RegistrarUsuarioBuilder;
-
 public class RegistrarUsuarioModel {
 
     private String nombre;

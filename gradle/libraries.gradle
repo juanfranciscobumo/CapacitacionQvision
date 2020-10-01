@@ -6,6 +6,8 @@ ext {
     assertJVersion = '3.9.1'
     cucumberVersion = '5.7.0'
     jacksonVersion = '2.11.2'
+    jsonVersion='20200518'
+    filloversion='1.18'
 
     libs = [
             slf4jApi: "org.slf4j:slf4j-simple:${slf4jVersion}",
@@ -26,7 +28,10 @@ ext {
                     ],
                     junit   : "junit:junit:${junitVersion}",
                     assertj : "org.assertj:assertj-core:${assertJVersion}",
-                    jackson : "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}"
+                    jacksonDataFormar : "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}",
+                    jacksonDataType : "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}",
+                    json : "org.json:json:${jsonVersion}",
+                    fillo : "com.codoid.products:fillo:${filloversion}"
 
             ]
     ]

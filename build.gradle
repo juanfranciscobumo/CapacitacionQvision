@@ -51,17 +51,14 @@ dependencies {
             libs.test.serenity.rest,
             libs.test.serenity.screenplay,
             libs.test.serenity.junit,
-            libs.test.serenity.screenplayWebdriver,
             libs.test.serenity.cucumber,
             libs.test.junit,
             libs.test.assertj,
             libs.slf4jApi,
-            libs.test.jackson
-
-    compile group: 'org.json', name: 'json', version: '20200518'
-    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.2'
-
-}
+            libs.test.jacksonDataFormar,
+            libs.test.jacksonDataType,
+            libs.test.fillo
+   }
 
 test {
     testLogging.showStandardStreams = true

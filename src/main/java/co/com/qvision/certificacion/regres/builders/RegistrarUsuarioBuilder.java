@@ -1,13 +1,11 @@
 package co.com.qvision.certificacion.regres.builders;
 
 import co.com.qvision.certificacion.regres.intefaces.IBuilderRegistrarUsuario;
-import co.com.qvision.certificacion.regres.models.IniciarSesionModel;
 import co.com.qvision.certificacion.regres.models.RegistrarUsuarioModel;
 
 public class RegistrarUsuarioBuilder implements IBuilderRegistrarUsuario {
     private String nombre;
     private String trabajo;
-
 
     public RegistrarUsuarioBuilder(String nombre) {
         this.nombre = nombre;
@@ -15,7 +13,6 @@ public class RegistrarUsuarioBuilder implements IBuilderRegistrarUsuario {
 
     public static RegistrarUsuarioBuilder nombre(String nombre) {
         return new RegistrarUsuarioBuilder(nombre);
-
     }
 
     public RegistrarUsuarioModel yTrabajo(String trabajo) {

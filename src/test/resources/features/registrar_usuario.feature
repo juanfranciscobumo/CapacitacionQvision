@@ -18,18 +18,19 @@ Característica: Registrar usuario
       | morfeo | líder   | OK        |
 
 
-
   @loguearse
   Esquema del escenario: Loguearse
     Cuando el usuario inicie sesión erroneamente
-      | email   | contrasena   |
-      | <email> | <contrasena> |
+      | email   |
+      | <email> |
     Entonces el usuario vera el mensaje de error '<mensajeError>'
 
     @desarrollo
     Ejemplos: Registrar usuario
-      | email              | contrasena | mensajeError |
-      | eve.holt@reqres.in | pistola    | BAD_REQUEST  |
+      | email              | mensajeError |
+      | eve.holt@reqres.in | BAD_REQUEST  |
+      | juan@reqres.in     | BAD_REQUEST  |
+
 
 
 

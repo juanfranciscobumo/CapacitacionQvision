@@ -8,11 +8,13 @@ public class ObtenerFecha {
 
     }
 
-    public static String fechaDelServicio(String fecha) {
+    public static String getFechaDelServicio(String fecha) {
+
         return fecha.split("T")[0];
     }
 
-    public static String fechaDelSistema() {
+    public static String getFechaDelSistema() {
+
         return new SimpleDateFormat("yyyy-MM").format(new Date());
     }
 }

@@ -2,7 +2,6 @@ package co.com.qvision.certificacion.regres.tasks;
 
 import co.com.qvision.certificacion.regres.interactions.Post;
 import co.com.qvision.certificacion.regres.models.IniciarSesionModel;
-import co.com.qvision.certificacion.regres.models.RegistrarUsuarioModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

@@ -13,7 +13,6 @@ import static co.com.qvision.certificacion.regres.utils.Constantes.RECURSO_CREAR
 public class RegistrarElUsuario implements Task {
 
     public static final String APLICACION = "application/json; charset=utf-8";
-    public static final String ACCEPT = "*/*";
 
     private final RegistrarUsuarioModel registrarUsuarioModel;
 
@@ -25,10 +24,9 @@ public class RegistrarElUsuario implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Post.to(RECURSO_CREAR_USUARIO)
                 .with(request -> request.contentType(APLICACION)
-                        .accept(ACCEPT)
                         .body(registrarUsuarioModel)
                         .relaxedHTTPSValidation()
-                        .urlEncodingEnabled(false)
+                        .urlEncodingEnabled(true)
                 ));
     }
 
