@@ -12,7 +12,7 @@ import io.cucumber.java.DefaultParameterTransformer;
 
 import java.lang.reflect.Type;
 
-public class Configurer {
+public class ConfiguracionDataTable {
 	
 	private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 

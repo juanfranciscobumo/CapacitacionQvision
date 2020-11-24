@@ -10,9 +10,9 @@ Característica: Registrar usuario
   @crearUsuario
   Esquema del escenario: Crear usuario
     Cuando el usuario '<nombre>' ingrese su trabajo '<trabajo>'
-    Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente con la respuesta '<respuesta>'
+    Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente '<respuesta>'
 
-    @desarrollo
+    @desarrollo @laboratorio
     Ejemplos: Registrar usuario
       | nombre | trabajo | respuesta |
       | morfeo | líder   | OK        |
@@ -25,7 +25,7 @@ Característica: Registrar usuario
       | <email> |
     Entonces el usuario vera el mensaje de error '<mensajeError>'
 
-    @desarrollo
+    @desarrollo @laboratorio
     Ejemplos: Registrar usuario
       | email              | mensajeError |
       | eve.holt@reqres.in | BAD_REQUEST  |

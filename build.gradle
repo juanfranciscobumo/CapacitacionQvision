@@ -6,19 +6,19 @@ apply plugin: 'java-library'
 apply plugin: 'org.sonarqube'
 
 repositories {
-    maven { url "http://insecure.repo1.maven.org/maven2" }
+    mavenCentral()
     jcenter()
 }
 
 buildscript {
     repositories {
-        maven { url "http://insecure.repo1.maven.org/maven2" }
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.13")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.6")
         classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0")
-        classpath("net.serenity-bdd:serenity-single-page-report:2.1.4")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.3.6")
     }
 }
 

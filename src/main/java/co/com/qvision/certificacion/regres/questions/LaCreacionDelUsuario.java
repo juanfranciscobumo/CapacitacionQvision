@@ -1,17 +1,32 @@
 package co.com.qvision.certificacion.regres.questions;
+import static co.com.qvision.certificacion.regres.utils.ObtieneLaFecha.getFechaDelServicio;
+import co.com.qvision.certificacion.regres.models.RespuestaCreacionDeUsuario;
 
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
-import static co.com.qvision.certificacion.regres.builders.RespuestaRegistrarUsuarioBuilder.laComparacionDelNombre;
+import static net.serenitybdd.rest.SerenityRest.lastResponse;
 
-@Subject("Se compara la respuesta del servicio con los datos esperados")
+
 public class LaCreacionDelUsuario {
+    private static RespuestaCreacionDeUsuario creacionDeUsuario;
+
     private LaCreacionDelUsuario() {
 
     }
 
-    public static Question<Boolean> fueCorrecta(String nombre, String trabajo) {
-        return actor -> laComparacionDelNombre(nombre).yElTrabajoSonLosEsperados(trabajo);
+    public static Question<String> conNombre() {
+        creacionDeUsuario = lastResponse().jsonPath().getObject("", RespuestaCreacionDeUsuario.class);
+        return actor -> creacionDeUsuario.getNombre();
+    }
+
+    public static Question<String> conTrabajo() {
+        creacionDeUsuario = lastResponse().jsonPath().getObject("", RespuestaCreacionDeUsuario.class);
+        return actor -> creacionDeUsuario.getTrabajo();
+    }
+
+    public static Question<String> enLaFecha() {
+        creacionDeUsuario = lastResponse().jsonPath().getObject("", RespuestaCreacionDeUsuario.class);
+        return actor -> getFechaDelServicio(creacionDeUsuario.getCreatedAt());
     }
 }

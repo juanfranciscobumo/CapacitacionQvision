@@ -1,6 +1,6 @@
 package co.com.qvision.certificacion.regres.models;
 
-public class RegistrarUsuarioModel {
+public class RegistraUsuarioModel {
 
     private String nombre;
     private String trabajo;

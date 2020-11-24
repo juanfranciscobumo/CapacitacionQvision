@@ -1,7 +1,7 @@
 package co.com.qvision.certificacion.regres.tasks;
 
 import co.com.qvision.certificacion.regres.interactions.Post;
-import co.com.qvision.certificacion.regres.models.IniciarSesionModel;
+import co.com.qvision.certificacion.regres.models.IniciaSesionModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -15,9 +15,9 @@ public class IniciaSesion implements Task {
     public static final String APLICACION = "application/json; charset=utf-8";
     public static final String ACCEPT = "*/*";
 
-    private final IniciarSesionModel iniciarSesionModel;
+    private final IniciaSesionModel iniciarSesionModel;
 
-    public IniciaSesion(IniciarSesionModel iniciarSesionModel) {
+    public IniciaSesion(IniciaSesionModel iniciarSesionModel) {
         this.iniciarSesionModel = iniciarSesionModel;
     }
 
@@ -34,7 +34,7 @@ public class IniciaSesion implements Task {
                 ));
     }
 
-   public static IniciaSesion conLosDatos(IniciarSesionModel iniciarSesionModel){
+   public static IniciaSesion conLosDatos(IniciaSesionModel iniciarSesionModel){
         return Tasks.instrumented(IniciaSesion.class, iniciarSesionModel);
 
     }

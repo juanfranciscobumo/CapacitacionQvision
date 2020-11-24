@@ -1,6 +1,6 @@
 package co.com.qvision.certificacion.regres.models;
 
-public class IniciarSesionModel {
+public class IniciaSesionModel {
 
     private String email;
     private String contrasena;

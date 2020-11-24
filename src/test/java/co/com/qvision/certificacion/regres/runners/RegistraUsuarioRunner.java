@@ -9,9 +9,9 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/registrar_usuario.feature"
         , glue = "co/com/qvision/certificacion/regres/stepDefinitions"
-        , tags = "@loguearse"
+       // , tags = "@loguearse"
         , snippets = CAMELCASE)
 
-public class RegistrarUsuarioRunner {
+public class RegistraUsuarioRunner {
 
 }

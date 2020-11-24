@@ -1,7 +1,7 @@
 package co.com.qvision.certificacion.regres.tasks;
 
 import co.com.qvision.certificacion.regres.interactions.Post;
-import co.com.qvision.certificacion.regres.models.RegistrarUsuarioModel;
+import co.com.qvision.certificacion.regres.models.RegistraUsuarioModel;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -10,13 +10,13 @@ import net.thucydides.core.annotations.Step;
 
 import static co.com.qvision.certificacion.regres.utils.Constantes.RECURSO_CREAR_USUARIO;
 
-public class RegistrarElUsuario implements Task {
+public class RegistraElUsuario implements Task {
 
     public static final String APLICACION = "application/json; charset=utf-8";
 
-    private final RegistrarUsuarioModel registrarUsuarioModel;
+    private final RegistraUsuarioModel registrarUsuarioModel;
 
-    public RegistrarElUsuario(RegistrarUsuarioModel registrarUsuarioModel) {
+    public RegistraElUsuario(RegistraUsuarioModel registrarUsuarioModel) {
         this.registrarUsuarioModel = registrarUsuarioModel;
     }
     @Step("{0} crea un usuario en regres")
@@ -30,8 +30,8 @@ public class RegistrarElUsuario implements Task {
                 ));
     }
 
-   public static RegistrarElUsuario conLosDatos(RegistrarUsuarioModel registrarUsuarioModel){
-        return Tasks.instrumented(RegistrarElUsuario.class, registrarUsuarioModel);
+   public static RegistraElUsuario conLosDatos(RegistraUsuarioModel registrarUsuarioModel){
+        return Tasks.instrumented(RegistraElUsuario.class, registrarUsuarioModel);
 
     }
 }

@@ -1,23 +1,29 @@
-package co.com.qvision.certificacion.regres.utils;
+package co.com.qvision.certificacion.regres.abilities;
 
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
+import net.serenitybdd.screenplay.Ability;
+import net.serenitybdd.screenplay.Actor;
 
 import static co.com.qvision.certificacion.regres.utils.Constantes.QUERY;
 import static co.com.qvision.certificacion.regres.utils.Constantes.RUTA_DATA;
 
-public class LeerExcel {
-    private static Fillo fillo = new Fillo();
-    private static String clave;
+public class LeeUnExcel implements Ability {
+    private Fillo fillo = new Fillo();
+    private String clave;
     private static final String VCLAVE = "CLAVE";
 
-    private LeerExcel() {
-
+    public static LeeUnExcel paraVerLosDatos() {
+        return new LeeUnExcel();
     }
 
-    public static String getClave(String email) {
+    public static LeeUnExcel as(Actor actor) {
+        return actor.abilityTo(LeeUnExcel.class);
+    }
+
+    public String getClave(String email) {
         try {
             Connection connection = fillo.getConnection(RUTA_DATA);
             Recordset recordset = connection.executeQuery(String.format(QUERY, email));
@@ -30,5 +36,10 @@ public class LeerExcel {
             e.getMessage();
         }
         return clave;
+    }
+
+    @Override
+    public String toString() {
+        return "Lee une excel de: "+RUTA_DATA;
     }
 }

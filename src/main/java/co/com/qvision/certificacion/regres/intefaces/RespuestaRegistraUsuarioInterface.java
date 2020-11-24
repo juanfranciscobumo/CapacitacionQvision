@@ -1,5 +1,5 @@
 package co.com.qvision.certificacion.regres.intefaces;
 
-public interface IRespuestaRegistrarUsuario {
+public interface RespuestaRegistraUsuarioInterface {
     Boolean build();
 }
