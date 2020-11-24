@@ -6,6 +6,7 @@ import co.com.qvision.certificacion.regres.models.IniciaSesionModel;
 import co.com.qvision.certificacion.regres.questions.LaCreacionDelUsuario;
 import co.com.qvision.certificacion.regres.tasks.IniciaSesion;
 import co.com.qvision.certificacion.regres.tasks.RegistraElUsuario;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;

@@ -3,7 +3,6 @@ import static co.com.qvision.certificacion.regres.utils.ObtieneLaFecha.getFechaD
 import co.com.qvision.certificacion.regres.models.RespuestaCreacionDeUsuario;
 
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.annotations.Subject;
 
 import static net.serenitybdd.rest.SerenityRest.lastResponse;
 

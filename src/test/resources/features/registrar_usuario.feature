@@ -29,7 +29,7 @@ Característica: Registrar usuario
     Ejemplos: Registrar usuario
       | email              | mensajeError |
       | eve.holt@reqres.in | BAD_REQUEST  |
-      | juan@reqres.in     | BAD_REQUEST  |
+     # | juan@reqres.in     | BAD_REQUEST  |
 
 
 
