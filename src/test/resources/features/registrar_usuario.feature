@@ -36,7 +36,7 @@ Característica: Registrar usuario
 
     @laboratorio
     Ejemplos: Registrar usuario
-      | email              | mensajeError |
+      | email           | mensajeError |
       | maria@reqres.in | BAD_REQUEST  |
 
 

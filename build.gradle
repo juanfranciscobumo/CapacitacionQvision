@@ -55,7 +55,6 @@ dependencies {
             libs.test.junit,
             libs.test.assertj,
             libs.slf4jApi,
-            libs.test.jacksonDataFormar,
             libs.test.jacksonDataType,
             libs.test.fillo
    }
