@@ -1,7 +1,7 @@
 # ![Serenity BDD](docs/qvision.png "Logo Title Text 1")
 
 
-# Prueba automatizada para realizar la búsqueda de un video en YouTube
+# Prueba automatizada de un servicio rest
 
 # ![Serenity BDD](docs/serenity.png "Logo Title Text 1")
 
