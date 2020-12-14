@@ -6,6 +6,7 @@ public class RegistraUsuarioModel {
     private String trabajo;
 
     public void setNombre(String nombre) {
+
         this.nombre = nombre;
     }
 
@@ -18,6 +19,7 @@ public class RegistraUsuarioModel {
     }
 
     public void setTrabajo(String trabajo) {
+
         this.trabajo = trabajo;
     }
 }

@@ -21,11 +21,4 @@ public class IniciaSesionModel {
         this.contrasena = contrasena;
     }
 
-    @Override
-    public String toString() {
-        return "IniciaSesionModel{" +
-                "email='" + email + '\'' +
-                ", contrasena='" + contrasena + '\'' +
-                '}';
-    }
 }

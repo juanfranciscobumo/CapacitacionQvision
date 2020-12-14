@@ -10,7 +10,7 @@ public class Hooks {
     @Before
     public void set_the_stage() {
         OnStage.setTheStage(new OnlineCast());
-        OnStage.theActorCalled(ACTOR).whoCan(LeeUnExcel.paraVerLosDatos());;
+        OnStage.theActorCalled(ACTOR).whoCan(LeeUnExcel.paraVerLosDatos());
     }
 
 }

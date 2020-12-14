@@ -6,7 +6,6 @@ import co.com.qvision.certificacion.regres.models.IniciaSesionModel;
 import co.com.qvision.certificacion.regres.questions.LaCreacionDelUsuario;
 import co.com.qvision.certificacion.regres.tasks.IniciaSesion;
 import co.com.qvision.certificacion.regres.tasks.RegistraElUsuario;
-import io.cucumber.java.DataTableType;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
@@ -49,11 +48,13 @@ public class RegistraUsuarioStepDefinitions {
 
     @Cuando("el usuario {string} ingrese su trabajo {string}")
     public void elUsuarioIngreseSuTrabajo(String nombre, String trabajo) {
-        theActorInTheSpotlight().attemptsTo(RegistraElUsuario.conLosDatos(nombre(nombre).yTrabajo(trabajo)));
+        theActorInTheSpotlight().attemptsTo(RegistraElUsuario
+                .conLosDatos(nombre(nombre).yTrabajo(trabajo)));
     }
     @Entonces("el usuario {string} verá el trabajo {string} creado exitosamente {string}")
     public void elUsuarioVeráElTrabajoCreadoExitosamente(String nombre, String trabajo,
                                                          String codigoRespuesta) {
+
         theActorInTheSpotlight().should(
                 seeThatResponse(MENSAJE_RESPUESTA,
                         response -> response
@@ -72,7 +73,6 @@ public class RegistraUsuarioStepDefinitions {
     @Cuando("el usuario inicie sesión erroneamente")
     public void elUsuarioInicieSesiónErroneamente(List<IniciaSesionModel> datos) {
 
-        System.out.println(LeeUnExcel.as(theActorInTheSpotlight()).getClave(datos.get(0).getEmail()));
         theActorInTheSpotlight()
                 .attemptsTo(IniciaSesion
                         .conLosDatos(email(datos.get(0).getEmail())

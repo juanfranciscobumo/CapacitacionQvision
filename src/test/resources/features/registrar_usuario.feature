@@ -12,11 +12,15 @@ Característica: Registrar usuario
     Cuando el usuario '<nombre>' ingrese su trabajo '<trabajo>'
     Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente '<respuesta>'
 
-    @desarrollo @laboratorio
+    @desarrollo
     Ejemplos: Registrar usuario
       | nombre | trabajo | respuesta |
       | morfeo | líder   | OK        |
 
+    @laboratorio
+    Ejemplos: Registrar usuario
+      | nombre | trabajo | respuesta |
+      | ana    | líder   | OK        |
 
   @loguearse
   Esquema del escenario: Loguearse
@@ -25,11 +29,16 @@ Característica: Registrar usuario
       | <email> |
     Entonces el usuario vera el mensaje de error '<mensajeError>'
 
-    @desarrollo @laboratorio
+    @desarrollo
     Ejemplos: Registrar usuario
       | email              | mensajeError |
       | eve.holt@reqres.in | BAD_REQUEST  |
-     # | juan@reqres.in     | BAD_REQUEST  |
+
+    @laboratorio
+    Ejemplos: Registrar usuario
+      | email              | mensajeError |
+      | maria@reqres.in | BAD_REQUEST  |
+
 
 
 
