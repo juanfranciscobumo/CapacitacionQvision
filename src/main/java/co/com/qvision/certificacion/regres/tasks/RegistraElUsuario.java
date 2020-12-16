@@ -26,7 +26,7 @@ public class RegistraElUsuario implements Task {
                 .with(request -> request.contentType(APLICACION)
                         .body(registrarUsuarioModel)
                         .relaxedHTTPSValidation()
-                        .urlEncodingEnabled(true)
+                        .urlEncodingEnabled(false)
                 ));
     }
 

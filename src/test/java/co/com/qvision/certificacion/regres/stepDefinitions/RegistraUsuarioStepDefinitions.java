@@ -51,6 +51,7 @@ public class RegistraUsuarioStepDefinitions {
         theActorInTheSpotlight().attemptsTo(RegistraElUsuario
                 .conLosDatos(nombre(nombre).yTrabajo(trabajo)));
     }
+
     @Entonces("el usuario {string} verá el trabajo {string} creado exitosamente {string}")
     public void elUsuarioVeráElTrabajoCreadoExitosamente(String nombre, String trabajo,
                                                          String codigoRespuesta) {
@@ -61,11 +62,11 @@ public class RegistraUsuarioStepDefinitions {
                                 .statusCode(valueOf(codigoRespuesta).getCodigo())
                                 .statusLine(valueOf(codigoRespuesta).getMensaje()))
                         .orComplainWith(CreaUsuarioException.class, CODIGO_RESPUESTA),
-                seeThat("El nombre",LaCreacionDelUsuario.conNombre(), equalTo(nombre))
+                seeThat("El nombre", LaCreacionDelUsuario.conNombre(), equalTo(nombre))
                         .orComplainWith(CreaUsuarioException.class, NOMBRE),
-                seeThat("El trabajo",LaCreacionDelUsuario.conTrabajo(), equalTo(trabajo))
+                seeThat("El trabajo", LaCreacionDelUsuario.conTrabajo(), equalTo(trabajo))
                         .orComplainWith(CreaUsuarioException.class, TRABAJO),
-                seeThat("la fecha",LaCreacionDelUsuario.enLaFecha(), containsString(getFechaDelSistema()))
+                seeThat("la fecha", LaCreacionDelUsuario.enLaFecha(), containsString(getFechaDelSistema()))
                         .orComplainWith(CreaUsuarioException.class, FECHA)
         );
     }
@@ -79,16 +80,14 @@ public class RegistraUsuarioStepDefinitions {
                                 .yClave(LeeUnExcel.as(theActorInTheSpotlight()).getClave(datos.get(0).getEmail()))));
     }
 
-    @Entonces("el usuario vera el mensaje de error {string}")
-    public void elUsuarioVeraElMensajeDeError(String mensajeError) {
+    @Entonces("el usuario verá el mensaje de error {string}")
+    public void elUsuarioVeráElMensajeDeError(String mensajeError) {
         theActorInTheSpotlight().should(
                 seeThatResponse(MENSAJE_RESPUESTA,
                         response -> response
                                 .statusCode(valueOf(mensajeError).getCodigo())
                                 .body(ERROR, equalTo(valueOf(mensajeError).getMensaje())))
                         .orComplainWith(CreaUsuarioException.class, CODIGO_RESPUESTA));
-
     }
-
 }
 

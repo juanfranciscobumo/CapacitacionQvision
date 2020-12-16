@@ -20,8 +20,7 @@ public class LaCreacionDelUsuario {
     }
 
     public static Question<String> conTrabajo() {
-        creacionDeUsuario = lastResponse().jsonPath().getObject("", RespuestaCreacionDeUsuario.class);
-        return actor -> creacionDeUsuario.getTrabajo();
+        return actor -> lastResponse().jsonPath().getString("trabajo");
     }
 
     public static Question<String> enLaFecha() {

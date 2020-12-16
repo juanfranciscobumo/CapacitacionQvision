@@ -13,12 +13,12 @@ Característica: Registrar usuario
     Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente '<respuesta>'
 
     @desarrollo
-    Ejemplos: Registrar usuario
+    Ejemplos: Datos desarrollo
       | nombre | trabajo | respuesta |
       | morfeo | líder   | OK        |
 
     @laboratorio
-    Ejemplos: Registrar usuario
+    Ejemplos: Datos laboratorio
       | nombre | trabajo | respuesta |
       | ana    | líder   | OK        |
 
@@ -27,15 +27,15 @@ Característica: Registrar usuario
     Cuando el usuario inicie sesión erroneamente
       | email   |
       | <email> |
-    Entonces el usuario vera el mensaje de error '<mensajeError>'
+    Entonces el usuario verá el mensaje de error '<mensajeError>'
 
     @desarrollo
-    Ejemplos: Registrar usuario
+    Ejemplos: Datos desarrollo
       | email              | mensajeError |
       | eve.holt@reqres.in | BAD_REQUEST  |
 
     @laboratorio
-    Ejemplos: Registrar usuario
+    Ejemplos: Datos laboratorio
       | email           | mensajeError |
       | maria@reqres.in | BAD_REQUEST  |
 
