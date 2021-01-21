@@ -8,6 +8,5 @@ public class CreaUsuarioException extends AssertionError {
 
     public CreaUsuarioException(String message, Throwable cause) {
         super(message, cause);
-
     }
 }

@@ -1,6 +1,3 @@
-# ![Serenity BDD](docs/qvision.png "Logo Title Text 1")
-
-
 # Prueba automatizada de un servicio rest
 
 # ![Serenity BDD](docs/serenity.png "Logo Title Text 1")
