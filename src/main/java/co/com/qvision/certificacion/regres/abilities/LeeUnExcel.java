@@ -6,6 +6,8 @@ import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 import net.serenitybdd.screenplay.Ability;
 import net.serenitybdd.screenplay.Actor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static co.com.qvision.certificacion.regres.utils.Constantes.QUERY;
 import static co.com.qvision.certificacion.regres.utils.Constantes.RUTA_DATA;
@@ -14,6 +16,7 @@ public class LeeUnExcel implements Ability {
     private Fillo fillo = new Fillo();
     private String clave;
     private static final String VCLAVE = "CLAVE";
+    private static Logger logger = LoggerFactory.getLogger(LeeUnExcel.class);
 
     public static LeeUnExcel paraVerLosDatos() {
         return new LeeUnExcel();
@@ -33,13 +36,13 @@ public class LeeUnExcel implements Ability {
             recordset.close();
             connection.close();
         } catch (FilloException e) {
-            e.getMessage();
+            logger.error(e.getMessage());
         }
         return clave;
     }
 
     @Override
     public String toString() {
-        return "Lee une excel de: "+RUTA_DATA;
+        return "Lee une excel de: " + RUTA_DATA;
     }
 }

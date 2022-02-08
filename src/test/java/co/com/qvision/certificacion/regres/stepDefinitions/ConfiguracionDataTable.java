@@ -1,10 +1,7 @@
 package co.com.qvision.certificacion.regres.stepDefinitions;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.cucumber.java.DefaultDataTableCellTransformer;
 import io.cucumber.java.DefaultDataTableEntryTransformer;
@@ -19,8 +16,6 @@ public class ConfiguracionDataTable {
 	@DefaultParameterTransformer
 	@DefaultDataTableEntryTransformer
 	@DefaultDataTableCellTransformer
-	//fromValue trae la información que se va a guardar
-	//toValueType al tipo de dato que se va a convertir
 	public Object defaultTransformer(Object fromValue, Type toValueType) {
 		JavaType javaType = objectMapper.constructType(toValueType);
 		return objectMapper.convertValue(fromValue, javaType);

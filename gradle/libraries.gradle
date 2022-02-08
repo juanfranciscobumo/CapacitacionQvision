@@ -1,11 +1,11 @@
 ext {
-    slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.3.6'
-    serenityCucumberVersion = '2.3.6'
-    junitVersion = '4.13'
-    assertJVersion = '3.9.1'
-    cucumberVersion = '6.6.0'
-    jacksonVersion = '2.11.2'
+    slf4jVersion = '1.7.32'
+    serenityCoreVersion = '3.0.0'
+    serenityCucumberVersion = '2.5.8'
+    junitVersion = '5.8.2'
+    assertJVersion = '3.22.0'
+    cucumberVersion = '6.11.0'
+    jacksonVersion = '2.13.1'
     filloversion='1.18'
 
     libs = [
@@ -21,10 +21,10 @@ ext {
                     ],
                     cucumber: [
                             java : "io.cucumber:cucumber-java:${cucumberVersion}",
-                            junit: "io.cucumber:cucumber-junit:${cucumberVersion}",
+                            junit: "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}",
                             core : "io.cucumber:cucumber-core:${cucumberVersion}"
                     ],
-                    junit   : "junit:junit:${junitVersion}",
+                    junit   : "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
                     assertj : "org.assertj:assertj-core:${assertJVersion}",
                     jacksonDataType : "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}",
                     fillo : "com.codoid.products:fillo:${filloversion}"

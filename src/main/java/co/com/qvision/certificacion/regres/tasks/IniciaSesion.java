@@ -7,13 +7,10 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.thucydides.core.annotations.Step;
 
-
 import static co.com.qvision.certificacion.regres.utils.Constantes.RECURSO_INICIAR_SESION;
+import static io.restassured.http.ContentType.JSON;
 
 public class IniciaSesion implements Task {
-
-    public static final String APLICACION = "application/json; charset=utf-8";
-    public static final String ACCEPT = "*/*";
 
     private final IniciaSesionModel iniciarSesionModel;
 
@@ -26,15 +23,13 @@ public class IniciaSesion implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(Post.to(RECURSO_INICIAR_SESION)
-                .with(request -> request.contentType(APLICACION)
-                        .accept(ACCEPT)
+                .with(request -> request.contentType(JSON)
                         .body(iniciarSesionModel)
                         .relaxedHTTPSValidation()
-                        .urlEncodingEnabled(false)
-                ));
+                        .urlEncodingEnabled(false)));
     }
 
-   public static IniciaSesion conLosDatos(IniciaSesionModel iniciarSesionModel){
+    public static IniciaSesion conLosDatos(IniciaSesionModel iniciarSesionModel) {
         return Tasks.instrumented(IniciaSesion.class, iniciarSesionModel);
 
     }

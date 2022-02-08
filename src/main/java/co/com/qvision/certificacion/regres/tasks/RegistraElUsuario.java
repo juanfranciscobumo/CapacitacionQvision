@@ -2,17 +2,15 @@ package co.com.qvision.certificacion.regres.tasks;
 
 import co.com.qvision.certificacion.regres.interactions.Post;
 import co.com.qvision.certificacion.regres.models.RegistraUsuarioModel;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.thucydides.core.annotations.Step;
 
 import static co.com.qvision.certificacion.regres.utils.Constantes.RECURSO_CREAR_USUARIO;
+import static io.restassured.http.ContentType.JSON;
 
 public class RegistraElUsuario implements Task {
-
-    public static final String APLICACION = "application/json; charset=utf-8";
 
     private final RegistraUsuarioModel registrarUsuarioModel;
 
@@ -23,7 +21,7 @@ public class RegistraElUsuario implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Post.to(RECURSO_CREAR_USUARIO)
-                .with(request -> request.contentType(APLICACION)
+                .with(request -> request.contentType(JSON)
                         .body(registrarUsuarioModel)
                         .relaxedHTTPSValidation()
                         .urlEncodingEnabled(false)
