@@ -9,9 +9,9 @@ import co.com.qvision.certificacion.regres.tasks.RegistraElUsuario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
-import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
+import net.serenitybdd.model.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
-import net.thucydides.core.util.EnvironmentVariables;
+import net.thucydides.model.util.EnvironmentVariables;
 
 import java.util.List;
 
@@ -39,7 +39,6 @@ public class RegistraUsuarioStepDefinitions {
     public EnvironmentVariables environmentVariables;
     public String endpoint;
 
-
     @Dado("que se haya ingresado el endpoint del servicio")
     public void queSeHayaIngresadoElEndpointDelServicio() {
         endpoint = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(ENDPOINT_REGRES);
@@ -52,10 +51,8 @@ public class RegistraUsuarioStepDefinitions {
                 .conLosDatos(nombre(nombre).yTrabajo(trabajo)));
     }
 
-    @Entonces("el usuario {string} verá el trabajo {string} creado exitosamente {string}")
-    public void elUsuarioVeráElTrabajoCreadoExitosamente(String nombre, String trabajo,
-                                                         String codigoRespuesta) {
-
+    @Entonces("el usuario {string} vera el trabajo {string} creado exitosamente {string}")
+    public void elUsuarioVeraElTrabajoCreadoExitosamente(String nombre, String trabajo, String codigoRespuesta) {
         theActorInTheSpotlight().should(
                 seeThatResponse(MENSAJE_RESPUESTA,
                         response -> response
@@ -71,17 +68,16 @@ public class RegistraUsuarioStepDefinitions {
         );
     }
 
-    @Cuando("el usuario inicie sesión erroneamente")
-    public void elUsuarioInicieSesiónErroneamente(List<IniciaSesionModel> datos) {
-
+    @Cuando("el usuario inicie sesion erroneamente")
+    public void elUsuarioInicieSesionErroneamente(List<IniciaSesionModel> datos) {
         theActorInTheSpotlight()
                 .attemptsTo(IniciaSesion
                         .conLosDatos(email(datos.get(0).getEmail())
                                 .yClave(LeeUnExcel.as(theActorInTheSpotlight()).getClave(datos.get(0).getEmail()))));
     }
 
-    @Entonces("el usuario verá el mensaje de error {string}")
-    public void elUsuarioVeráElMensajeDeError(String mensajeError) {
+    @Entonces("el usuario vera el mensaje de error {string}")
+    public void elUsuarioVeraElMensajeDeError(String mensajeError) {
         theActorInTheSpotlight().should(
                 seeThatResponse(MENSAJE_RESPUESTA,
                         response -> response
@@ -89,5 +85,6 @@ public class RegistraUsuarioStepDefinitions {
                                 .body(ERROR, equalTo(valueOf(mensajeError).getMensaje())))
                         .orComplainWith(CreaUsuarioException.class, CODIGO_RESPUESTA));
     }
+
 }
 

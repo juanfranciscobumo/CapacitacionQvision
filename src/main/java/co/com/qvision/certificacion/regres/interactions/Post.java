@@ -1,9 +1,9 @@
 package co.com.qvision.certificacion.regres.interactions;
 
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.rest.interactions.RestInteraction;
-import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.rest.abilities.CallAnApi.as;
 

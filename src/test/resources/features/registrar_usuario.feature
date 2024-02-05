@@ -10,7 +10,7 @@ Característica: Registrar usuario
   @crearUsuario
   Esquema del escenario: Crear usuario
     Cuando el usuario '<nombre>' ingrese su trabajo '<trabajo>'
-    Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente '<respuesta>'
+    Entonces el usuario '<nombre>' vera el trabajo '<trabajo>' creado exitosamente '<respuesta>'
 
     @desarrollo
     Ejemplos: Datos desarrollo
@@ -24,10 +24,10 @@ Característica: Registrar usuario
 
   @loguearse
   Esquema del escenario: Loguearse
-    Cuando el usuario inicie sesión erroneamente
+    Cuando el usuario inicie sesion erroneamente
       | email   |
       | <email> |
-    Entonces el usuario verá el mensaje de error '<mensajeError>'
+    Entonces el usuario vera el mensaje de error '<mensajeError>'
 
     @desarrollo
     Ejemplos: Datos desarrollo

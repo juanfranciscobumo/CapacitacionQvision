@@ -39,7 +39,7 @@
 
 # Requerimientos
 
-* Java JDK 1.8 
+* Java JDK 16
 * Gestor de proyectos Gradle 
 
 # Comandos para ejecutar el proyecto.
@@ -47,6 +47,6 @@
 * gradle clean test --tests RegistraUsuarioRunner aggregate -Dcucumber.filter.tags="@laboratorio" -Denvironment=Laboratorio 
 
 
-## Autores
+## Autor
 
-Juan Francisco Builes - Lisney Villa - jbuiles@qvision.com.co - lvilla@qvision.com.co
+Juan Francisco Builes - juanfranciscobumo@gmail.com

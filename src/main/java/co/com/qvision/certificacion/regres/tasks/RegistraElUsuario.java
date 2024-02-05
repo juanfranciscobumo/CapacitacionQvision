@@ -2,10 +2,10 @@ package co.com.qvision.certificacion.regres.tasks;
 
 import co.com.qvision.certificacion.regres.interactions.Post;
 import co.com.qvision.certificacion.regres.models.RegistraUsuarioModel;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.thucydides.core.annotations.Step;
 
 import static co.com.qvision.certificacion.regres.utils.Constantes.RECURSO_CREAR_USUARIO;
 import static io.restassured.http.ContentType.JSON;
